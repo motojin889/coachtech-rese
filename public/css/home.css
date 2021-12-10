@@ -1,0 +1,47 @@
+.restaurants{
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.restaurant-card{
+  width: 24%;
+  height: 300px;
+  box-shadow: 1px 1px 5px rgb(102, 102, 102);
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.card-img{
+  width: 100%;
+}
+
+.card-ttl{
+  margin: 20px 10px 5px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.card-option{
+  display: flex;
+  margin-left: 10px;
+}
+
+.card-genre{
+  font-size: 12px;
+}
+
+.card-area{
+  font-size: 12px;
+}
+
+.card-detail{
+  background-color: blue;
+  color: white;
+  border-radius: 5px;
+  font-size: 14px;
+  padding: 5px 15px;
+  margin: 0 10px 0;
+}
