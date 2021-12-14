@@ -24,7 +24,11 @@
                 <p class="card-area">#{{$item->area->name}}</p>
                 <p class="card-genre">#{{$item->genre->name}}</p>
             </div>
-            <a href="" class="card-detail">詳しく見る</a>
+            <form action="/detail">
+                @csrf
+                <input type="hidden" name="id" value="{{$item->id}}">
+                <input type="submit" value="詳しく見る" class="card-detail">
+            </form>
         </div>
         @endif
         @endforeach

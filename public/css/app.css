@@ -43,7 +43,9 @@
 /*ハンバーガーがクリックされたら*/
 .open .hamburger__line--1 {
   transform: rotate(-45deg);
-  top: 11px;
+  left: 7px;
+  top: 15px;
+  width: 15px;
 }
 
 .open .hamburger__line--2 {
@@ -52,7 +54,9 @@
 
 .open .hamburger__line--3 {
   transform: rotate(45deg);
-  top: 11px;
+  left: 7px;
+  top: 15px;
+  width: 15px;
 }
 
 /*
@@ -73,9 +77,20 @@ sp-nav(ナビ)
 /*ハンバーガーがクリックされたら右からスライド*/
 .open .sp-nav {
   left: 0;
+  text-align: center;
 }
 
+.open .sp-nav li{
+  position: relative;
+  top: 45vh;
+  vertical-align: middle;
+  margin-bottom: 20px;
+  text-decoration: none;
+}
 
+.open .sp-nav li a{
+  font-size: 20px;
+}
 /*
 black-bg(ハンバーガーメニュー解除用bg)
 =================================== */

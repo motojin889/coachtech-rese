@@ -28,4 +28,12 @@ class HomeController extends Controller
         $items = Restaurant::get();
         return view('home',compact('items'));
     }
+
+    public function detail(Request $request)
+    {
+        $items = Restaurant::find($request->id);
+        return view('restaurant', compact('items'));
+
+    }
+
 }

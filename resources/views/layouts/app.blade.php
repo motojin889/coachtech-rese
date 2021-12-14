@@ -33,9 +33,9 @@
                     </div>
                     <nav class="sp-nav">
                         <ul>
-                            <li>Home</li>
-                            <li>Registration</li>
-                            <li>login</li>
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/register">Registration</a></li>
+                            <li><a href="/login">login</a></li>
                         </ul>
                     </nav>
                     <div class="black-bg" id="js-black-bg"></div>
