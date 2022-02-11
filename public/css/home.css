@@ -1,3 +1,44 @@
+.search{
+  width: 50%;
+  background-color: white;
+  box-shadow: black 1px 1px 2px;
+  border-radius: 4px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.search-area{
+  border-right: rgb(170, 170, 170) 1px solid;
+  flex-grow: 1;
+  padding-left: 5px;
+}
+
+.search-genre{
+  border-right: rgb(170, 170, 170) 1px solid;
+  flex-grow: 1;
+  padding-left: 5px;
+}
+
+.search-text{
+  flex-grow: 3;
+  padding-left: 5px;
+  margin-right: 5px;
+}
+
+.search-submit{
+  height: 25px;
+  width: 35px;
+  flex-grow: 1;
+  margin-right: 8px;
+  background-color: rgb(59, 116, 221);
+  color: aliceblue;
+  font-size: 12px;
+  border-radius: 3px;
+  text-align: center;
+}
+
 .restaurants{
   width: 90%;
   margin: 0 auto;
@@ -19,13 +60,14 @@
 }
 
 .card-ttl{
-  margin: 20px 10px 5px;
+  margin: 20px 10px 0;
   font-size: 18px;
   font-weight: bold;
 }
 
 .card-option{
   display: flex;
+  height: 33px;
   margin-left: 10px;
 }
 
@@ -38,10 +80,10 @@
 }
 
 .card-detail{
-  background-color: blue;
+  background-color: rgb(46, 46, 247);
   color: white;
   border-radius: 5px;
-  font-size: 14px;
-  padding: 5px 15px;
+  font-size: 13px;
+  padding: 3px 10px;
   margin: 0 10px 0;
 }

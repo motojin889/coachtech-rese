@@ -19,6 +19,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="css/home.css">
 </head>
 
 <body>
@@ -54,39 +55,24 @@
                     </ul>
 
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
-                        @guest
-                        @if (Route::has('login'))
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">{{ __('ログイン') }}</a>
-                        </li>
-                        @endif
-
-                        @if (Route::has('register'))
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">{{ __('新規登録') }}</a>
-                        </li>
-                        @endif
-                        @else
-                        <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                {{ Auth::user()->name }}
-                            </a>
-
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                    document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
-                                </a>
-
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                    @csrf
-                                </form>
-                            </div>
-                        </li>
-                        @endguest
-                    </ul>
+                    <form action="/serch" class="search">
+                        <select name="area" id="" class="search-area">
+                            <option value="all">All area</option>
+                            <option value="1">東京都</option>
+                            <option value="2">大阪府</option>
+                            <option value="3">福岡県</option>
+                        </select>
+                        <select name="genre" id="" class="search-genre">
+                            <option value="all">All genre</option>
+                            <option value="1">寿司</option>
+                            <option value="2">ラーメン</option>
+                            <option value="3">焼肉</option>
+                            <option value="4">イタリアン</option>
+                            <option value="5">居酒屋</option>
+                        </select>
+                        <input type="text" name="serch_text" id="" class="search-text" placeholder="Search...">
+                        <input type="submit" value="検索する" class="search-submit">
+                    </form>
                 </div>
             </div>
         </nav>

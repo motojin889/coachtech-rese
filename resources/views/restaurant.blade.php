@@ -44,28 +44,31 @@
               <p class="restaurant-description">{{$items->description}}</p>
         </div>
       </div>
-      
+
       <div class="reserve">
         <h2 class="reserve-ttl">予約</h2>
-        <form action="" class="reserve-form">
+        <form action="/reserve" class="reserve-form" method="POST">
           @csrf
-          <div class="flex-column">
-            <input type="date" name="" id="" class="reserve-date">
-            <input type="time" name="" id="" class="reserve-time">
-            <select name="" id="" class="reserve-number">
-              <option value="1">1人</option>
-              <option value="2">2人</option>
-              <option value="3">3人</option>
-              <option value="4">4人</option>
-              <option value="5">5人</option>
-              <option value="6">6人</option>
-              <option value="7">7人</option>
-              <option value="8">8人</option>
-              <option value="9">9人</option>
-              <option value="10">10人</option>
-            </select>
+          <input type="hidden" name="restaurant_id" value={{$items->id}}>
+          <div class="flex-between">
+            <div class="flex-column">
+              <input type="date" name="date" id="" class="reserve-date">
+              <input type="time" name="time" id="" class="reserve-time">
+              <select name="number_of_people" id="" class="reserve-number">
+                <option value="1">1人</option>
+                <option value="2">2人</option>
+                <option value="3">3人</option>
+                <option value="4">4人</option>
+                <option value="5">5人</option>
+                <option value="6">6人</option>
+                <option value="7">7人</option>
+                <option value="8">8人</option>
+                <option value="9">9人</option>
+                <option value="10">10人</option>
+              </select>
+            </div>
+            <input type="submit" value="予約する" class="reserve-submit">
           </div>
-          <input type="submit" value="予約する" class="reserve-submit">
         </form>
       </div>
     </div>
