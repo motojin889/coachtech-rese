@@ -37,7 +37,11 @@
                             <li><a href="/">Home</a></li>
                             <li><a href="/register">Registration</a></li>
                             <li><a href="/login">login</a></li>
-                        </ul>
+                            <li><form action="{{ route('logout') }}" method="post">
+                                @csrf
+                                <input type="submit" value="ログアウト">
+                                </form>
+                            </li>
                     </nav>
                     <div class="black-bg" id="js-black-bg"></div>
                 </div>

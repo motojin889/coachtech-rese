@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ReserveController;
+use App\Http\Controllers\FavoriteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,3 +24,5 @@ Route::get('/detail', [HomeController::class, 'detail'])->name('detail');
 Route::post('/reserve', [ReserveController::class, 'reserve'])->name('reserve');
 Route::get('/thanks', [ReserveController::class, 'thanks'])->name('thanks');
 Route::get('/serch', [HomeController::class, 'serch'])->name('serch');
+Route::post('/favorite', [FavoriteController::class, 'favorite'])->name('favorite');
+Route::get('/unfavorite', [FavoriteController::class, 'unfavorite'])->name('unfavorite');

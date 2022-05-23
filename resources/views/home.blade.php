@@ -29,11 +29,34 @@
                 <input type="hidden" name="id" value="{{$item->id}}">
                 <input type="submit" value="詳しく見る" class="card-detail">
             </form>
+
+            @auth
+            <!-- Review.phpに作ったisLikedByメソッドをここで使用 -->
+            @if (!$restaurants->App/Models/isLikedBy(Auth::user()))
+            <span class="likes">
+                <i class="fas fa-music like-toggle" data-review-id="{{ $item->id }}"></i>
+                <span class="like-counter">{{$item->likes_count}}</span>
+            </span><!-- /.likes -->
+            @else
+            <span class="likes">
+                <i class="fas fa-music heart like-toggle liked" data-review-id="{{ $item->id }}"></i>
+                <span class="like-counter">{{$item->likes_count}}</span>
+            </span><!-- /.likes -->
+            @endif
+            @endauth
+            @guest
+            <span class="likes">
+                <i class="fas fa-music heart"></i>
+                <span class="like-counter">{{$item->likes_count}}</span>
+            </span><!-- /.likes -->
+            @endguest
+
         </div>
         @endif
         @endforeach
     </div>
     @endsection
+    <script src="js/favorite.js"></script>
 </body>
 
 </html>

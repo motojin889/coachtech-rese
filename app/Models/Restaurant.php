@@ -26,4 +26,9 @@ class Restaurant extends Model
     {
         return $this->hasMany(Favorite::class, 'restaurant_id');
     }
+
+    public function isLikedBy($user): bool
+    {
+        return Favorite::where('user_id', $user->id)->where('restaurant_id', $this->id)->first() !== null;
+    }
 }

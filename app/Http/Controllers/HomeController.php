@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Restaurant;
 use App\Models\Area;
+use App\Models\Favorite;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -26,7 +28,11 @@ class HomeController extends Controller
     public function index()
     {
         $items = Restaurant::get();
-        return view('home',compact('items'));
+        $restaurants = Restaurant::withCount('favorite')->orderBy('id', 'desc')->paginate(10);
+        $param = [
+            'restaurants' => $restaurants,
+        ];
+        return view('home',compact('items','restaurants'));
     }
 
     public function detail(Request $request)
